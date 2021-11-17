@@ -9,7 +9,7 @@
 
 #define BASE		0
 #define SYMBOL		1
-#define transPARENT	2
+#define TRANSPARENT	2
 
 
 / {
@@ -25,24 +25,6 @@
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-        };
-        ltw: custom_layer_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <150>;
-            quick_tap_ms = <500>;
-            bindings = <&mo>, <&kp>;
-        };
-        lt_: custom_layer_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <150>;
-            quick_tap_ms = <500>;
-            bindings = <&mo>, <&kp>;
         };
     };
 	keymap {
@@ -61,7 +43,7 @@
 		symbol_layer {
 			bindings = <
 	&trans		&kp	N1		&kp	N2		&kp	N3		&kp	N4		&kp	N5														&kp	N6		&kp	N7		&kp	N8		&kp	N9		&kp	N0		&trans	
-	&trans		&kp	EXCL	&hr	LALT AT	&hr	LSHFT POUND	&hr	LCTL DLLR	&kp	PRCNT											&kp	CARET	&r	LCTL	AMPS	&hr	LSHFT	ASTRK	&hr	LALT	LPAR	&kp	RPAR	&trans	
+	&trans		&kp	EXCL	&hr	LALT AT	&hr	LSHFT POUND	&hr	LCTL DLLR	&kp	PRCNT											&kp	CARET	&hr	LCTL AMPS	&hr	LSHFT ASTRK	&hr	LALT LPAR	&kp	RPAR	&trans	
 	&trans		&trans		&trans		&kp	LBKT	&kp	RBKT	&trans		&trans		&trans		&trans		&trans		&trans		&kp	LBRC	&kp	RBRC	&trans		&trans		&trans	
 	            						&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans	
 			>;
