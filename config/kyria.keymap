@@ -7,13 +7,10 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-#define BASE       0
-#define MOUSE      1
-#define MOVEMENT   2
-#define BRACKETS   3
-#define SYMBOLS    4
-#define NUMBERS    5
-#define FNUMBERS   6
+#define BASE		0
+#define SYMBOL		1
+#define transPARENT	2
+
 
 / {
 	behaviors {
@@ -60,21 +57,23 @@
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		}; 
+
 		symbol_layer {
 			bindings = <
-	&kp	TRANS	&kp	N1		&kp	N2		&kp	N3		&kp	N4		&kp	N5														&kp	N6		&kp	N7		&kp	N8		&kp	N9		&kp	N0		&kp	TRANS
-	&kp	TRANS	&kp	EXCL	&hr	LALT AT	&hr	LSHFT POUND	&hr	LCTL DLLR	&kp	PRCNT											&kp	CARET	&r	LCTL	AMPS	&hr	LSHFT	ASTRK	&hr	LALT	LPAR	&kp	RPAR	&kp	TRANS
-	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	LBKT	&kp	RBKT	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	LBRC	&kp	RBRC	&kp	TRANS	&kp	TRANS	&kp	TRANS
-	            						&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS
+	&trans		&kp	N1		&kp	N2		&kp	N3		&kp	N4		&kp	N5														&kp	N6		&kp	N7		&kp	N8		&kp	N9		&kp	N0		&trans	
+	&trans		&kp	EXCL	&hr	LALT AT	&hr	LSHFT POUND	&hr	LCTL DLLR	&kp	PRCNT											&kp	CARET	&r	LCTL	AMPS	&hr	LSHFT	ASTRK	&hr	LALT	LPAR	&kp	RPAR	&trans	
+	&trans		&trans		&trans		&kp	LBKT	&kp	RBKT	&trans		&trans		&trans		&trans		&trans		&trans		&kp	LBRC	&kp	RBRC	&trans		&trans		&trans	
+	            						&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans	
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
+
 		transparent_layer {
 			bindings = <
-	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS													&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS
-	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS													&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS
-	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	
-	            						&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS
+	&trans		&trans		&trans		&trans		&trans		&trans														&trans		&trans		&trans		&trans		&trans		&trans	
+	&trans		&trans		&trans		&trans		&trans		&trans														&trans		&trans		&trans		&trans		&trans		&trans	
+	&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans		
+	            						&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans	
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
