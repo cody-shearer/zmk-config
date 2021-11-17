@@ -7,16 +7,74 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+#define BASE       0
+#define MOUSE      1
+#define MOVEMENT   2
+#define BRACKETS   3
+#define SYMBOLS    4
+#define NUMBERS    5
+#define FNUMBERS   6
+
 / {
+	behaviors {
+        // Customized mod_tap and layer_tap:
+        // - Enables quick_tap. Useful for backspace/space.
+        // - Switch to balanced flavor to allow for fast (back)space + character rollovers.
+        hr: custom_mod_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        ltw: custom_layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <150>;
+            quick_tap_ms = <500>;
+            bindings = <&mo>, <&kp>;
+        };
+        lt_: custom_layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <150>;
+            quick_tap_ms = <500>;
+            bindings = <&mo>, <&kp>;
+        };
+    };
 	keymap {
 		compatible = "zmk,keymap";
 
-		default_layer {
+		base_layer {
 			bindings = <
 	&kp	GRAVE	&kp	Q		&kp	W		&kp	F		&kp	P		&kp	B														&kp	J		&kp	L		&kp	U		&kp	Y		&kp	SEMI	&kp	BSLH
-	&kp	EQUAL	&kp	A		&kp	R		&kp	S		&kp	T		&kp	G														&kp	M		&kp	N		&kp	E		&kp	I		&kp	O		&kp	SQT
+	&kp	EQUAL	&kp	A		&hr	LALT R	&hr	LSHFT S	&hr	LCTL T	&kp	G														&kp	M		&hr	LCTL N	&hr	LSHFT E	&hr	LALT I	&kp	O		&kp	SQT
 	&kp	LSHFT	&kp	Z		&kp	X		&kp	C		&kp	D		&kp	V		&kp	LSHFT	&kp	LSHFT	&kp	LSHFT	&kp	LSHFT	&kp	K		&kp	H		&kp	COMMA	&kp	DOT		&kp	FSLH	&kp	RCTRL	
 	            						&kp	LGUI	&kp	ESC		&kp	DEL		&kp	SPACE	&kp	RET		&kp	BSPC	&kp	SPACE	&kp	TAB		&kp	BSPC	&kp	RALT
+			>;
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+		}; 
+		symbol_layer {
+			bindings = <
+	&kp	TRANS	&kp	N1		&kp	N2		&kp	N3		&kp	N4		&kp	N5														&kp	N6		&kp	N7		&kp	N8		&kp	N9		&kp	N0		&kp	TRANS
+	&kp	TRANS	&kp	EXCL	&hr	LALT AT	&hr	LSHFT POUND	&hr	LCTL DLLR	&kp	PRCNT											&kp	CARET	&r	LCTL	AMPS	&hr	LSHFT	ASTRK	&hr	LALT	LPAR	&kp	RPAR	&kp	TRANS
+	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	LBKT	&kp	RBKT	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	LBRC	&kp	RBRC	&kp	TRANS	&kp	TRANS	&kp	TRANS
+	            						&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS
+			>;
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+		};
+		transparent_layer {
+			bindings = <
+	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS													&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS
+	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS													&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS
+	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	
+	            						&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS	&kp	TRANS
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
