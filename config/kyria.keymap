@@ -27,7 +27,7 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        lt: custom_mod_tap {
+        ltw: custom_mod_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
@@ -45,7 +45,7 @@
 &kp	GRAVE	&kp	Q		&kp	W		&kp	F		&kp	P		&kp	B														&kp	J		&kp	L		&kp	U		&kp	Y		&kp	SEMI	&kp	BSLH
 &kp	EQUAL	&kp	A		&hr	LALT R	&hr	LSHFT S	&hr	LCTL T	&kp	G														&kp	M		&hr	LCTL N	&hr	LSHFT E	&hr	LALT I	&kp	O		&kp	SQT
 &kp	LSHFT	&kp	Z		&kp	X		&kp	C		&kp	D		&kp	V		&kp	LSHFT	&kp	LSHFT	&kp	LSHFT	&kp	LSHFT	&kp	K		&kp	H		&kp	COMMA	&kp	DOT		&kp	FSLH	&kp	RCTRL	
-									&kp	LCTL	&kp	ESC		&hr LMETA DEL		&lt	SYMBOL SPACE	&lt FUNCTION RET		&lt FUNCTION BSPC	&lt	SYMBOL SPACE	&hr LMETA TAB		&kp	BSPC	&kp	RALT
+									&kp	LCTL	&kp	ESC		&hr LMETA DEL		&ltw	SYMBOL SPACE	&ltw FUNCTION RET		&ltw FUNCTION BSPC	&ltw	SYMBOL SPACE	&hr LMETA TAB		&kp	BSPC	&kp	RALT
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		}; 
