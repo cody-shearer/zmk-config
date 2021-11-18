@@ -38,7 +38,7 @@
         };		
     }; 
 	keymap {
-		compatible = "zmk,keymap";eeieenisrrttrnnritnsitnriseccccccccccccccccccccccccccccc
+		compatible = "zmk,keymap";
 		base_layer {
 			bindings = <
 &kp	GRAVE	&kp	Q		&kp	W		&kp	F		&kp	P		&kp	B														&kp	J		&kp	L		&kp	U		&kp	Y		&kp	SEMI	&kp	BSLH
