@@ -22,7 +22,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <250>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -31,16 +31,16 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP";
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick_tap_ms = <500>;
             flavor = "balanced";
+            tapping-term-ms = <250>;
+            quick_tap_ms = <500>;
             bindings = <&mo>, <&kp>;
         };		
     }; 
 	keymap {
 		compatible = "zmk,keymap";eeieenisrrttrnnritnsitnriseccccccccccccccccccccccccccccc
 		base_layer {
-			bindings = <		6
+			bindings = <
 &kp	GRAVE	&kp	Q		&kp	W		&kp	F		&kp	P		&kp	B														&kp	J		&kp	L		&kp	U		&kp	Y		&kp	SEMI	&kp	BSLH
 &kp	EQUAL	&kp	A		&hr	LALT R	&hr	LSHFT S	&hr	LCTL T	&kp	G														&kp	M		&hr	LCTL N	&hr	LSHFT E	&hr	LALT I	&kp	O		&kp	SQT
 &kp	LSHFT	&kp	Z		&kp	X		&kp	C		&kp	D		&kp	V		&kp	LSHFT	&kp	LSHFT	&kp	LSHFT	&kp	LSHFT	&kp	K		&kp	H		&kp	COMMA	&kp	DOT		&kp	FSLH	&kp	RCTRL	
