@@ -74,7 +74,7 @@
 &kp ESC		&kp N3		&kp Q		&kp E		&kp R		&kp T														&trans		&trans		&trans		&trans		&trans		&trans	
 &kp LSFT	&kp N2	 	&kp A		&kp W		&kp D 		&kp F														&trans		&kp	LEFT	&kp	UP		&kp RIGHT	&trans		&trans	
 &kp LCTL	&kp N1		&kp Z		&kp S		&kp X		&kp C		&trans		&trans		&trans		&trans		&trans		&trans		&kp	DOWN	&trans		&trans		&trans		
-									&trans		&kp LALT	&trans		&trans		&kp SPACE	&trans		&trans		&trans		&trans		&trans	
+									&trans		&kp LALT	&kp TAB		&trans		&kp SPACE	&trans		&trans		&trans		&trans		&trans	
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};	
