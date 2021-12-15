@@ -52,10 +52,10 @@
 
 		symbol_layer {
 			bindings = <
-&kp C_MUTE			&kp	N1		&kp	N2		&kp	N3		&kp	N4		&kp	N5														&kp	N6		&kp	N7		&kp	N8		&kp	N9		&kp	N0		&trans	
-&kp C_PP			&kp	EXCL	&hr	LALT AT	&hr	LSHFT POUND	&hr	LCTL DLLR	&kp	PRCNT											&kp	CARET	&hr	LCTL AMPS	&hr	LSHFT ASTRK	&hr	LALT LPAR	&kp	RPAR	&trans	
-&mt	C_NEXT C_PREV 	&trans		&trans		&kp	LBKT	&kp	RBKT	&trans		&trans		&trans		&trans		&trans		&trans		&kp	LBRC	&kp	RBRC	&trans		&trans		&trans	
-									&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans	
+&kp C_MUTE			&kp	N1		&kp	N2		&kp	N3			&kp	N4			&kp	N5														&kp	N6		&kp	N7			&kp	N8			&kp	N9			&kp	N0		&trans	
+&kp C_PP			&kp	EXCL	&hr	LCTL AT	&hr	LALT POUND	&hr	LSHFT DLLR	&kp	PRCNT													&kp	CARET	&hr	LSHFT AMPS	&hr	LALT ASTRK	&hr	LCTL LPAR	&kp	RPAR	&trans	
+&mt	C_NEXT C_PREV 	&trans		&trans		&kp	LBKT		&kp	RBKT		&trans		&trans		&trans		&trans		&trans		&trans		&kp	LBRC		&kp	RBRC		&trans			&trans		&trans	
+											&trans			&trans			&trans		&trans		&trans		&trans		&trans		&trans		&trans			&trans	
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
