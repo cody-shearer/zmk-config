@@ -33,7 +33,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <250>;
-            quick_tap_ms = <200>;
+            quick_tap_ms = <150>;
             bindings = <&mo>, <&kp>;
         };
     };                             
@@ -41,20 +41,20 @@
 		compatible = "zmk,keymap";
 		base_layer {
 			bindings = <
-&kp	GRAVE	&kp	Q		&kp	W		&kp	F		&kp	P			&kp	B																			&kp	J		&kp	L		&kp	U		&kp	Y		&kp	SEMI	&kp	BSLH
-&kp	EQUAL	&kp	A		&hr	LCTL R	&hr	LALT S	&hr	LSHFT T		&kp	G																			&kp	M		&hr	LSHFT N	&hr	LALT E	&hr	LCTL I	&kp	O		&kp	SQT
-&kp	UNDER	&kp	Z		&kp	X		&kp	C		&kp	D			&kp	V			&kp	CAPS		&kp	LSHFT		&kp	LSHFT		&tog GAME		&kp	K		&kp	H		&kp	COMMA	&kp	DOT		&kp	FSLH	&kp	MINUS	
-									&none		&hr LGUI ESC	&ltw FKEY TAB	&ltw SYM RET 	&ltw FUN DEL 	&ltw FUN BSPC	&ltw SYM SPACE	&caps_word	&kp	BSPC	&none
+&kp	GRAVE	&kp	Q		&kp	W		&kp	F		&kp	P		&kp	B														&kp	J		&kp	L		&kp	U		&kp	Y		&kp	SEMI	&kp	BSLH
+&kp	EQUAL	&kp	A		&hr	LALT R	&hr	LSHFT S	&hr	LCTL T	&kp	G														&kp	M		&hr	LCTL N	&hr	LSHFT E	&hr	LALT I	&kp	O		&kp	SQT
+&kp	UNDER	&kp	Z		&kp	X		&kp	C		&kp	D		&kp	V		&kp	CAPS	&kp	LSHFT	&kp	LSHFT	&tog GAME	&kp	K		&kp	H		&kp	COMMA	&kp	DOT		&kp	FSLH	&kp	MINUS	
+									&none		&kp	ESC		&hr LGUI TAB &ltw FUN RET &ltw SYM DEL &ltw SYM BSPC &ltw FUN SPACE	&caps_word		&kp	BSPC	&none
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		}; 
 
 		symbol_layer {
 			bindings = <
-&kp C_MUTE			&kp	N1		&kp	N2		&kp	N3			&kp	N4			&kp	N5														&kp	N6		&kp	N7			&kp	N8			&kp	N9			&kp	N0		&trans	
-&kp C_PP			&kp	EXCL	&hr	LCTL AT	&hr	LALT POUND	&hr	LSHFT DLLR	&kp	PRCNT													&kp	CARET	&hr	LSHFT AMPS	&hr	LALT ASTRK	&hr	LCTL LPAR	&kp	RPAR	&trans	
-&mt	C_NEXT C_PREV 	&trans		&trans		&kp	LBKT		&kp	RBKT		&trans		&trans		&trans		&trans		&trans		&trans		&kp	LBRC		&kp	RBRC		&trans			&trans		&trans	
-											&trans			&trans			&trans		&trans		&trans		&trans		&trans		&trans		&trans			&trans	
+&kp C_MUTE			&kp	N1		&kp	N2		&kp	N3		&kp	N4		&kp	N5														&kp	N6		&kp	N7		&kp	N8		&kp	N9		&kp	N0		&trans	
+&kp C_PP			&kp	EXCL	&hr	LALT AT	&hr	LSHFT POUND	&hr	LCTL DLLR	&kp	PRCNT											&kp	CARET	&hr	LCTL AMPS	&hr	LSHFT ASTRK	&hr	LALT LPAR	&kp	RPAR	&trans	
+&mt	C_NEXT C_PREV 	&trans		&trans		&kp	LBKT	&kp	RBKT	&trans		&trans		&trans		&trans		&trans		&trans		&kp	LBRC	&kp	RBRC	&trans		&trans		&trans	
+									&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans	
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
