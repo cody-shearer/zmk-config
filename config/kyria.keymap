@@ -10,8 +10,9 @@
 #define BASE		0
 #define SYM			1
 #define FUN			2
-#define GAME		3
-#define TRANSPARENT	4
+#define FKEY		3
+#define GAME		4
+#define TRANSPARENT	5
 
 / {
 	behaviors {
@@ -42,9 +43,9 @@
 		base_layer {
 			bindings = <
 &kp	GRAVE	&kp	Q		&kp	W		&kp	F		&kp	P			&kp	B																			&kp	J		&kp	L		&kp	U		&kp	Y		&kp	SEMI	&kp	BSLH
-&kp	EQUAL	&kp	A		&hr	LALT R	&hr	LSHFT S	&hr	LCTL T		&kp	G																			&kp	M		&hr	LCTL N	&hr	LSHFT E	&hr	LALT I	&kp	O		&kp	SQT
+&kp	EQUAL	&kp	A		&hr	LCTL R	&hr	LALT S	&hr	LSHFT T		&kp	G																			&kp	M		&hr	LSHFT N	&hr	LALT E	&hr	LCTL I	&kp	O		&kp	SQT
 &kp	UNDER	&kp	Z		&kp	X		&kp	C		&kp	D			&kp	V			&kp	CAPS		&kp	LSHFT		&kp	LSHFT		&tog GAME		&kp	K		&kp	H		&kp	COMMA	&kp	DOT		&kp	FSLH	&kp	MINUS	
-									&none		&hr LGUI ESC	&ltw SYM TAB	&ltw SYM RET 	&ltw FUN DEL 	&ltw FUN BSPC	&ltw SYM SPACE	&caps_word	&kp	BSPC	&none
+									&none		&hr LGUI ESC	&ltw FKEY TAB	&ltw SYM RET 	&ltw FUN DEL 	&ltw FUN BSPC	&ltw SYM SPACE	&caps_word	&kp	BSPC	&none
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		}; 
@@ -52,7 +53,7 @@
 		symbol_layer {
 			bindings = <
 &kp C_MUTE			&kp	N1		&kp	N2		&kp	N3			&kp	N4			&kp	N5														&kp	N6		&kp	N7			&kp	N8			&kp	N9			&kp	N0		&trans	
-&kp C_PP			&kp	EXCL	&hr	LALT AT	&hr	LSHFT POUND	&hr	LCTL DLLR	&kp	PRCNT													&kp	CARET	&hr	LCTL AMPS	&hr	LSHFT ASTRK	&hr	LALT LPAR	&kp	RPAR	&trans	
+&kp C_PP			&kp	EXCL	&hr	LCTL AT	&hr	LALT POUND	&hr	LSHFT DLLR	&kp	PRCNT													&kp	CARET	&hr	LSHFT AMPS	&hr	LALT ASTRK	&hr	LCTL LPAR	&kp	RPAR	&trans	
 &mt	C_NEXT C_PREV 	&trans		&trans		&kp	LBKT		&kp	RBKT		&trans		&trans		&trans		&trans		&trans		&trans		&kp	LBRC		&kp	RBRC		&trans			&trans		&trans	
 											&trans			&trans			&trans		&trans		&trans		&trans		&trans		&trans		&trans			&trans	
 			>;
@@ -61,10 +62,10 @@
 
 		function_layer {
 			bindings = <
-&kp GRAVE	&kp STAR	&kp N9		&kp N8			&kp N7		&kp PLUS													&trans		&kp HOME	&trans		&kp END		&trans		&trans	
-&kp EQUAL	&kp DOT		&hr	LALT N6	&hr	LSHFT N5	&hr	LCTL N4 &kp N0														&kp	PG_UP	&kp	LEFT	&kp	UP		&kp RIGHT	&trans		&trans	
-&kp LCTL	&kp FSLH	&kp N3		&kp N2			&kp N1		&kp MINUS	&trans		&trans		&trans		&trans		&kp PG_DN	&trans		&kp	DOWN	&trans		&trans		&trans		
-									&trans			&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans	
+&kp GRAVE	&kp STAR	&kp N9		&kp N8		&kp N7			&kp PLUS													&trans		&kp HOME	&trans		&kp END		&trans		&trans	
+&kp EQUAL	&kp DOT		&hr	LCTL N6	&hr	LALT N5	&hr	LSHFT N4 	&kp N0														&kp	PG_UP	&kp	LEFT	&kp	UP		&kp RIGHT	&trans		&trans	
+&kp LCTL	&kp FSLH	&kp N3		&kp N2		&kp N1			&kp MINUS	&trans		&trans		&trans		&trans		&kp PG_DN	&trans		&kp	DOWN	&trans		&trans		&trans		
+									&trans		&trans			&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans	
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};		
