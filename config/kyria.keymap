@@ -15,6 +15,18 @@
 #define GAME		4
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <15 16 17>;
+			layers = <0>
+            bindings = <&kp ESC>;
+        };
+    };
+};
+
+/ {
 	behaviors {
         // Customized mod_tap and layer_tap:
         // - Enables quick_tap. Useful for backspace/space.
