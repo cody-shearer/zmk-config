@@ -91,7 +91,7 @@
 
 		function_layer {
 			bindings = <
-&kp C_MUTE			&kp	F9		&kp	F10		&kp	F11		&kp	F12		&tran														&trans			&trans		&trans		&trans		&trans		&trans	
+&kp C_MUTE			&kp	F9		&kp	F10		&kp	F11		&kp	F12		&trans														&trans			&trans		&trans		&trans		&trans		&trans	
 &kp C_PP			&kp	F5		&kp	F6		&kp	F7		&kp	F8		&trans														&kp	PG_UP		&kp	LEFT	&kp	UP		&kp RIGHT	&trans		&trans	
 &ge	C_PREV C_NEXT	&kp	F1		&kp	F2		&kp	F3		&kp	F4		&trans		&trans		&trans		&trans		&trans		&kp PG_DN		&kp HOME	&kp	DOWN	&kp END		&trans		&trans		
 											&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans			&trans		&trans	
