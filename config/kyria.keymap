@@ -19,22 +19,23 @@
         // Customized mod_tap and layer_tap:
         // - Enables quick_tap. Useful for backspace/space.
         // - Switch to balanced flavor to allow for fast (back)space + character rollovers.
-        //hr: custom_mod_tap {
-        //    compatible = "zmk,behavior-hold-tap";
-        //    label = "HOMEROW_MODS";
-        //    #binding-cells = <2>;
-        //    tapping-term-ms = <350>;
-        //    quick_tap_ms = <0>;
-        //    flavor = "tap-preferred";
-        //    bindings = <&kp>, <&kp>;
-        //};
+        hr: custom_mod_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
 		lh_pht: left_hand_positional_hold_tap {            
 			compatible = "zmk,behavior-hold-tap";            
 			label = "POSITIONAL_HOLD_TAP";            
 			#binding-cells = <2>;            
-			flavor = "tap-preferred";            
-			tapping-term-ms = <150>;                        // <---[[produces tap if held longer than tapping-term-ms]]                  
-			bindings = <&kp>, <&kp>;            
+			flavor = "tap-unless-interrupted";            
+			tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]            
+			quick-tap-ms = <200>;            
+			bindings = <&kp>, <&kp>;                 
 			hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 32 33 34 35 36 37 38 39 45 46 47 48 49>;    // <---[[right-hand keys]]
 		};
 		rh_pht: right_hand_positional_hold_tap {            
@@ -45,7 +46,7 @@
 			tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]            
 			quick-tap-ms = <200>;            
 			bindings = <&kp>, <&kp>;            
-			hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 30 31 39 40 41 42 43 44>;    // <---[[right-hand keys]]
+			hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 30 31 39 40 41 42 43 44>;    // <---[[left-hand keys]]
 		};
 	    ge: custom_mod_tap {
             compatible = "zmk,behavior-hold-tap";
@@ -70,30 +71,30 @@
 		compatible = "zmk,keymap";
 		base_layer {
 			bindings = <
-&ge GRAVE ESC	&kp	Q		&kp	W		&kp	F		&kp	P			&kp	B																			&kp	J		&kp	L		&kp	U		&kp	Y		&kp	SEMI		&kp	BSLH
-&kp	EQUAL		&lh_pht LGUI A	&lh_pht	LCTL R	&lh_pht	LALT S	&lh_pht	LSHFT T		&kp	G																			&kp	M		&rh_pht	LSHFT N	&rh_pht	LALT E	&rh_pht	LCTL I	&rh_pht LGUI O 		&kp	SQT
-&kp	UNDER		&kp	Z		&kp	X		&kp	C		&kp	D			&kp	V			&none			&none			&none			&tog GAME		&kp	K		&kp	H		&kp	COMMA	&kp	DOT		&kp	FSLH		&kp	MINUS
-										&none		&none			&ltw FKEY TAB	&ltw SYM RET 	&ltw FUN DEL 	&ltw FUN BSPC	&ltw SYM SPACE	&caps_word	&none		&none
+&ge GRAVE ESC	&kp	Q			&kp	W			&kp	F			&kp	P				&kp	B																			&kp	J		&kp	L			&kp	U			&kp	Y			&kp	SEMI			&kp	BSLH
+&kp	EQUAL		&lh_pht LGUI A	&hr	LCTL R		&lh_pht	LALT S	&lh_pht	LSHFT T		&kp	G																			&kp	M		&rh_pht	LSHFT N	&rh_pht	LALT E	&rh_pht	LCTL I	&rh_pht LGUI O 		&kp	SQT
+&kp	UNDER		&kp	Z			&kp	X			&kp	C			&kp	D				&kp	V			&none			&none			&none			&tog GAME		&kp	K		&kp	H			&kp	COMMA		&kp	DOT			&kp	FSLH			&kp	MINUS
+												&none			&none				&ltw FKEY TAB	&ltw SYM RET 	&ltw FUN DEL 	&ltw FUN BSPC	&ltw SYM SPACE	&caps_word	&none			&none
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		}; 
 
 		symbol_layer {
 			bindings = <
-&kp TILDE	&kp	N1			&kp	N2		&kp	N3			&kp	N4			&kp	N5													&kp	N6		&kp	N7			&kp	N8			&kp	N9			&kp	N0			&kp PIPE	
+&kp TILDE	&kp	N1				&kp	N2			&kp	N3				&kp	N4				&kp	N5													&kp	N6		&kp	N7				&kp	N8				&kp	N9				&kp	N0				&kp PIPE	
 &kp PLUS	&lh_pht LGUI EXCL	&lh_pht	LCTL AT	&lh_pht	LALT POUND	&lh_pht	LSHFT DLLR	&kp	PRCNT												&kp	CARET	&rh_pht	LSHFT AMPS	&rh_pht	LALT ASTRK	&rh_pht	LCTL LPAR	&rh_pht LGUI RPAR	&kp DQT	
-&trans	 	&trans			&trans		&trans			&kp	LBKT		&kp	RBKT	&trans		&trans		&trans		&trans	&kp	LBRC	&kp	RBRC		&kp LT			&kp GT			&kp QMARK		&kp UNDER	
-										&trans			&trans			&trans		&trans		&trans		&trans		&trans	&trans		&trans			&trans	
+&trans	 	&trans				&trans			&trans				&kp	LBKT			&kp	RBKT	&trans		&trans		&trans		&trans	&kp	LBRC	&kp	RBRC			&kp LT				&kp GT				&kp QMARK			&kp UNDER	
+												&trans				&trans				&trans		&trans		&trans		&trans		&trans	&trans		&trans				&trans	
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
 
 		function_layer {
 			bindings = <
-&trans		&kp STAR		&kp N9		&kp N8		&kp N7			&kp PLUS													&trans		&kp HOME	&trans		&kp END		&trans		&trans	
-&trans		&lh_pht LGUI DOT	&lh_pht	LCTL N6	&lh_pht	LALT N5	&lh_pht	LSHFT N4 	&kp N0														&rh_pht	PG_UP	&rh_pht	LEFT	&rh_pht	UP		&rh_pht RIGHT	&trans		&trans	
-&trans		&kp FSLH		&kp N3		&kp N2		&kp N1			&kp MINUS	&trans		&trans		&trans		&trans		&kp PG_DN	&trans		&kp	DOWN	&trans		&trans		&trans		
-										&trans		&trans			&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans	
+&kp C_MUTE			&kp	F9		&kp	F10		&kp	F11		&kp	F12		&tran														&trans			&trans		&trans		&trans		&trans		&trans	
+&kp C_PP			&kp	F5		&kp	F6		&kp	F7		&kp	F8		&trans														&kp	PG_UP		&kp	LEFT	&kp	UP		&kp RIGHT	&trans		&trans	
+&ge	C_PREV C_NEXT	&kp	F1		&kp	F2		&kp	F3		&kp	F4		&trans		&trans		&trans		&trans		&trans		&kp PG_DN		&kp HOME	&kp	DOWN	&kp END		&trans		&trans		
+											&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans			&trans		&trans	
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};		
@@ -110,10 +111,10 @@
 											
 		game_layer {
 			bindings = <
-&kp N3		&kp ESC		&kp Q		&kp E		&kp F		&kp T														&trans		&trans		&trans		&trans		&trans		&trans	
+&kp N3		&kp ESC		&kp Q		&kp E		&kp F		&kp T														&none		&none		&none		&none		&none		&none	
 &kp N2		&kp LSHFT	&kp A		&kp W		&kp D 		&kp R														&trans		&kp	LEFT	&kp	UP		&kp RIGHT	&trans		&trans	
 &kp N1		&kp LCTL	&kp Z		&kp S		&kp X		&kp C		&trans		&trans		&trans		&trans		&trans		&trans		&kp	DOWN	&trans		&trans		&trans		
-									&trans		&kp LALT	&kp TAB		&kp RET		&kp SPACE	&trans		&trans		&trans		&trans		&trans	
+									&trans		&kp LALT	&kp TAB		&kp SPACE	&kp RET		&trans		&trans		&trans		&trans		&trans	
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};	
