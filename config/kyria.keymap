@@ -42,7 +42,7 @@
 			label = "RIGHT_HAND_HOMEROW";            
 			#binding-cells = <2>;             
 			flavor = "tap-unless-interrupted";            
-			tapping-term-ms = <100>;                       
+			tapping-term-ms = <100>;                        
 			quick-tap-ms = <70>;  
 			trigger-delay-ms = <400>;  
 			bindings = <&kp>, <&kp>;        
