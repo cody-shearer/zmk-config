@@ -43,7 +43,7 @@
 			#binding-cells = <2>;             
 			flavor = "tap-unless-interrupted";            
 			tapping-term-ms = <100>;                        
-			quick-tap-ms = <70>;
+			quick-tap-ms = <70>; 
 			trigger-delay-ms = <50>;   
 			bindings = <&kp>, <&kp>;        
 			hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 30 31 39 40 41 42 43 44>;    // <---[[left-hand keys]]
