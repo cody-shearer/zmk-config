@@ -34,7 +34,7 @@
 			#binding-cells = <2>;
 			flavor = "tap-unless-interrupted";
 			tapping-term-ms = <70>;
-			delay-timer-ms = <150>;
+			delay-timer-ms = <200>;
 			quick-tap-ms = <70>;
 			bindings = <&kp>, <&kp>;
 			hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 32 33 34 35 36 37 38 39 42 43 45 46 47 48 49>;    // <---[[right-hand keys]]
@@ -56,7 +56,7 @@
 			#binding-cells = <2>;
 			flavor = "tap-unless-interrupted";
 			tapping-term-ms = <70>;
-			delay-timer-ms = <150>;
+			delay-timer-ms = <200>;
 			quick-tap-ms = <70>;
 			bindings = <&kp>, <&kp>;
 			hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 30 31 39 40 41 42 43 44>;    // <---[[left-hand keys]]
@@ -84,20 +84,20 @@
 		compatible = "zmk,keymap";
 		base_layer {
 			bindings = <
-&ge GRAVE ESC	&kp	Q				&kp	W			&kp	F			&kp	P			&kp	B																			&kp	J		&kp	L			&kp	U			&kp	Y			&kp	SEMI			&kp	BSLH
-&kp	EQUAL		&lh_pht_slow LGUI A	&lh_pht LCTL R	&lh_pht	LALT S	&lh_pht LSHFT T	&kp	G																			&kp	M		&rh_pht	LSHFT N	&rh_pht	LALT E	&rh_pht	LCTL I	&rh_pht_slow LGUI O &kp	SQT
-&kp	UNDER		&kp	Z				&kp	X			&kp	C			&kp	D			&kp	V			&none			&none			&none			&none			&kp	K		&kp	H			&kp	COMMA		&kp	DOT			&kp	FSLH			&kp	MINUS
-													&none			&none			&ltw FKEY TAB	&ltw SYM RET 	&ltw FUN DEL 	&ltw FUN BSPC	&ltw SYM SPACE	&caps_word	&none			&none
+&ge GRAVE ESC	&kp	Q				&kp	W			&kp	F					&kp	P			&kp	B																			&kp	J		&kp	L			&kp	U					&kp	Y			&kp	SEMI			&kp	BSLH
+&kp	EQUAL		&lh_pht_slow LGUI A	&lh_pht LCTL R	&lh_pht_slow	LALT S	&lh_pht LSHFT T	&kp	G																			&kp	M		&rh_pht	LSHFT N	&rh_pht_slow LALT E		&rh_pht	LCTL I	&rh_pht_slow LGUI O &kp	SQT
+&kp	UNDER		&kp	Z				&kp	X			&kp	C					&kp	D			&kp	V			&none			&none			&none			&none			&kp	K		&kp	H			&kp	COMMA				&kp	DOT			&kp	FSLH			&kp	MINUS
+													&none					&none			&ltw FKEY TAB	&ltw SYM RET 	&ltw FUN DEL 	&ltw FUN BSPC	&ltw SYM SPACE	&caps_word	&none			&none
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		}; 
 
 		symbol_layer {
 			bindings = <
-&kp TILDE	&kp	EXCL				&kp	AT			&kp	POUND		&kp	DLLR			&kp	PRCNT												&kp	CARET	&kp	AMPS			&kp	ASTRK		&kp	LPAR			&kp	RPAR				&kp PIPE	
-&kp PLUS	&lh_pht_slow LGUI N1	&lh_pht	LCTL N2	&lh_pht	LALT N3	&lh_pht	LSHFT N4	&kp	N5													&kp	N6		&rh_pht	LSHFT N7	&rh_pht	LALT N8	&rh_pht	LCTL N9		&rh_pht_slow LGUI N0	&kp DQT	
-&trans	 	&trans					&trans			&trans			&kp	LBKT			&kp	RBKT	&trans		&trans		&trans		&trans	&kp	LBRC	&kp	RBRC			&kp LT			&kp GT				&kp QMARK				&kp UNDER	
-													&trans			&trans				&trans		&trans		&trans		&trans		&trans	&trans		&trans				&trans	
+&kp TILDE	&kp	EXCL				&kp	AT			&kp	POUND				&kp	DLLR			&kp	PRCNT												&kp	CARET	&kp	AMPS			&kp	ASTRK				&kp	LPAR			&kp	RPAR				&kp PIPE	
+&kp PLUS	&lh_pht_slow LGUI N1	&lh_pht	LCTL N2	&lh_pht_slow LALT N3	&lh_pht	LSHFT N4	&kp	N5													&kp	N6		&rh_pht	LSHFT N7	&rh_pht_slow LALT N8	&rh_pht	LCTL N9		&rh_pht_slow LGUI N0	&kp DQT	
+&trans	 	&trans					&trans			&trans					&kp	LBKT			&kp	RBKT	&trans		&trans		&trans		&trans	&kp	LBRC	&kp	RBRC			&kp LT					&kp GT				&kp QMARK				&kp UNDER	
+													&trans					&trans				&trans		&trans		&trans		&trans		&trans	&trans		&trans				&trans	
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
