@@ -126,7 +126,7 @@
 			bindings = <
 &kp N3		&kp ESC		&kp Q		&kp E		&kp F		&kp T														&trans		&trans		&trans		&trans		&trans		&trans		
 &kp N2		&kp LSHFT	&kp A		&kp W		&kp D 		&kp R														&trans		&kp	LEFT	&kp	UP		&kp RIGHT	&trans		&trans	
-&kp N1		&kp LCTL	&kp Z		&kp S		&kp X		&kp C		&trans		&trans		&trans		&trans		&trans		&trans		&kp	DOWN	&trans		&trans		&trans		
+&kp N1		&kp LCTL	&kp Z		&kp S		&kp X		&kp C		&trans		&trans		&trans		&trans		&trans		&trans		&kp	DOWN	&trans		&trans		&trans		 
 									&trans		&kp LALT	&kp TAB		&kp SPACE	&kp RET		&trans		&trans		&trans		&trans		&trans	
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
