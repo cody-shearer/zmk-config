@@ -47,7 +47,7 @@
 		cw: custom_layer_tap {
 			compatible = "zmk,behavior-hold-tap";
 			label = "LAYER_TAP";
-			#binding-cells = <1>;
+			#binding-cells = <2>;
 			flavor = "balanced";
 			tapping-term-ms = <250>;
 			quick_tap_ms = <200>;
