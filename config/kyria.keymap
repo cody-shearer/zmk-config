@@ -15,44 +15,45 @@
 #define GAME		4
 #define QWERTY		5
 
-{
-	hrr: custom_mod_tap {
-		compatible = "zmk,behavior-hold-tap";
-		label = "BELOW_HOME_ROW";
-		#binding-cells = <2>;
-		tapping-term-ms = <150>;
-		quick_tap_ms = <0>;
-		flavor = "tap-preferred";
-		bindings = <&kp>, <&kp>;
-	};
-	ge: custom_mod_tap {
-		compatible = "zmk,behavior-hold-tap";
-		label = "GRAVE_ESCAPE";
-		#binding-cells = <2>;
-		tapping-term-ms = <200>;
-		quick_tap_ms = <0>;
-		flavor = "tap-preferred";
-		bindings = <&kp>, <&kp>;
-	};
-	ltw: custom_layer_tap {
-		compatible = "zmk,behavior-hold-tap";
-		label = "LAYER_TAP";
-		#binding-cells = <2>;
-		flavor = "balanced";
-		tapping-term-ms = <250>;
-		quick_tap_ms = <200>;
-		bindings = <&mo>, <&kp>;
-	};
-	cw: custom_layer_tap {
-		compatible = "zmk,behavior-hold-tap";
-		label = "LAYER_TAP";
-		#binding-cells = <2>;
-		flavor = "balanced";
-		tapping-term-ms = <250>;
-		quick_tap_ms = <200>;
-		bindings = <&mo>, <&kp>;
-	};
-};                             
+/ {
+	behaviors {
+		hrr: custom_mod_tap {
+			compatible = "zmk,behavior-hold-tap";
+			label = "BELOW_HOME_ROW";
+			#binding-cells = <2>;
+			tapping-term-ms = <150>;
+			quick_tap_ms = <0>;
+			flavor = "tap-preferred";
+			bindings = <&kp>, <&kp>;
+		};
+		ge: custom_mod_tap {
+			compatible = "zmk,behavior-hold-tap";
+			label = "GRAVE_ESCAPE";
+			#binding-cells = <2>;
+			tapping-term-ms = <200>;
+			quick_tap_ms = <0>;
+			flavor = "tap-preferred";
+			bindings = <&kp>, <&kp>;
+		};
+		ltw: custom_layer_tap {
+			compatible = "zmk,behavior-hold-tap";
+			label = "LAYER_TAP";
+			#binding-cells = <2>;
+			flavor = "balanced";
+			tapping-term-ms = <250>;
+			quick_tap_ms = <200>;
+			bindings = <&mo>, <&kp>;
+		};
+		cw: custom_layer_tap {
+			compatible = "zmk,behavior-hold-tap";
+			label = "LAYER_TAP";
+			#binding-cells = <2>;
+			flavor = "balanced";
+			tapping-term-ms = <250>;
+			quick_tap_ms = <200>;
+			bindings = <&mo>, <&kp>;
+		};
+	};                             
 
   	keymap { 
 		compatible = "zmk,keymap";
